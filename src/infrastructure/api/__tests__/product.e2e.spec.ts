@@ -49,13 +49,13 @@ describe("E2E test for product", () => {
     const listResponse = await request(app).get("/product").send();
 
     expect(listResponse.status).toBe(200);
-    expect(listResponse.body.customers.length).toBe(2);
-    const customer = listResponse.body.customers[0];
-    expect(customer.name).toBe("Crocs confort");
-    expect(customer.price).toBe(135);
-    const customer2 = listResponse.body.customers[1];
-    expect(customer2.name).toBe("Crocs Sport");
-    expect(customer2.price).toBe(150);
+    expect(listResponse.body.products.length).toBe(2);
+    const product = listResponse.body.products[0];
+    expect(product.name).toBe("Crocs confort");
+    expect(product.price).toBe(135);
+    const product2 = listResponse.body.products[1];
+    expect(product2.name).toBe("Crocs Sport");
+    expect(product2.price).toBe(150);
 
     const listResponseXML = await request(app)
     .get("/product")
